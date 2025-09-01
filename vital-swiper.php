@@ -25,3 +25,15 @@ function create_block_slider_block_init() {
 	register_block_type(__DIR__ . '/build/slider');
 }
 add_action( 'init', 'create_block_slider_block_init' );
+
+define('MANDY_SWIPER_VERSION', '0.1.0');
+
+if (!class_exists('\Skeletor\Plugin_Updater')) {
+	require_once(__DIR__ . '/class--plugin-updater.php');
+}
+
+$updater = new \Skeletor\Plugin_Updater(
+	plugin_basename(__FILE__),
+	MANDY_SWIPER_VERSION,
+	'https://github.com/mandytechnologies/mandy-tabbed-content/blob/main/package.json'
+);
