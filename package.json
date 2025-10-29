@@ -1,8 +1,8 @@
 {
-	"name": "mandy-swiper",
-	"version": "0.1.0",
-	"description": "Slider Block powered by Swiper JS.",
-	"author": "Mandy",
+	"name": "qb-swiper",
+	"version": "1.0.0",
+	"description": "Powered by Swiper JS and love.",
+	"author": "Quick Build",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -21,8 +21,8 @@
 	},
 	"plugin_data": {
 		"author": "Quick Build",
-		"author_profile": "https://mandydesign.com",
-		"title": "Quick Build Swiper",
+		"author_profile": "https://www.quickbuildwebsite.com/",
+		"title": "QB Swiper",
 		"download_url": "https://github.com/mandytechnologies/mandy-swiper/archive/refs/heads/main.zip",
 		"requires": "6.1",
 		"requires_php": "7.0"

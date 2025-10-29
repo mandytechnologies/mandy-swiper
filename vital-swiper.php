@@ -1,16 +1,18 @@
 <?php
 /**
- * Plugin Name:       Quick Build Swiper
- * Plugin URI:        https://quickbuildwebsite.com
- * Description:       Powered by Swiper JS and love.
- * Requires at least: 6.1
- * Requires PHP:      7.0
- * Version:           0.1.0
- * Author:            Quick Build
- * Author URI:        https://quickbuildwebsite.com
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- *
+ * Plugin Name:           QB - Swiper
+ * Plugin URI:            https://github.com/mandytechnologies/mandy-swiper
+ * Description:           Powered by Swiper JS and love.
+ * Version:               1.0.0
+ * Requires PHP:          7.0
+ * Requires at least:     6.1.0
+ * Tested up to:          6.8.2
+ * Author:                Quick Build
+ * Author URI:            https://www.quickbuildwebsite.com/
+ * License:               GPLv2 or later
+ * License URI:           https://www.gnu.org/licenses/
+ * Text Domain:           qb-swiper
+ * 
  */
 
 /**
@@ -26,14 +28,14 @@ function create_block_slider_block_init() {
 }
 add_action( 'init', 'create_block_slider_block_init' );
 
-define('MANDY_SWIPER_VERSION', '0.1.0');
+define('MANDY_SWIPER_VERSION', '1.0.0');
 
-if (!class_exists('\Skeletor\Plugin_Updater')) {
-	require_once(__DIR__ . '/class--plugin-updater.php');
-}
+require 'plugin-update-checker/plugin-update-checker.php';
 
-$updater = new \Skeletor\Plugin_Updater(
-	plugin_basename(__FILE__),
-	MANDY_SWIPER_VERSION,
-	'https://github.com/mandytechnologies/mandy-tabbed-content/blob/main/package.json'
+$update_checker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/mandytechnologies/mandy-swiper',
+	__FILE__,
+	'mandy-swiper'
 );
+
+require_once( 'includes/class-plugin.php' );
